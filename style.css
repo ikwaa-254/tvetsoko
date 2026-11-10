@@ -1,0 +1,132 @@
+/* ============================================
+   TvetSoko - Shared Styles (style.css)
+   Clean Premium E-Commerce Theme
+   ============================================ */
+
+/* ---- CSS VARIABLES - EDIT THESE FOR THEME ---- */
+:root {
+    --primary: #10b981; /* Vibrant Forest Green */
+    --primary-dark: #059669; /* Deep Evergreen */
+    --secondary: #0ea5e9; /* Waterfall Blue */
+    --accent: #f59e0b; /* Golden Amber */
+    --dark: #0f172a;
+    --darker: #020617;
+    --light: #ffffff;
+    --gray: #e2e8f0; 
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --glass: rgba(15, 23, 42, 0.65); 
+    --glass-border: rgba(255, 255, 255, 0.15);
+
+    /* RICH PROFESSIONAL BACKGROUND GRADIENT */
+    --bg-start: #0f172a; /* Slate Dark Blue */
+    --bg-mid: #1e293b;   /* Mid Slate */
+    --bg-end: #0f172a;   /* Balanced Base */
+}
+
+/* ---- BASE / BODY ---- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
+    background-attachment: fixed;
+    color: var(--light);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ---- BACKGROUND ANIMATION ---- */
+.bg-animation {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; overflow: hidden;
+}
+
+/* ---- CLEAN GREY BACKGROUND PARTICLES ---- */
+.bg-animation .particle {
+    position: absolute; 
+    border-radius: 50%;
+    background: linear-gradient(45deg, #334155, #475569); /* Elegant Gray */
+    opacity: 0.15; /* Subdued presence */
+    animation: float 25s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.15; }
+    50% { transform: translateY(-80px) rotate(180deg); opacity: 0.3; }
+}
+
+/* ---- NAVBAR ---- */
+.navbar {
+    background: var(--glass); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); 
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); 
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* ---- NAV LINKS TEXT VISIBILITY FIX ---- */
+.navbar .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.navbar .nav-links a {
+    color: #ffffff !important; /* Forces high-contrast clean white readability */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: var(--primary) !important; /* Hover changes item color to emerald green */
+}
+
+/* ---- PRODUCT CARDS LAYOUT FIXES ---- */
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.product-actions {
+    display: flex;
+    flex-direction: row; 
+    gap: 0.75rem; 
+    align-items: center;
+}
+
+.product-actions form {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
